@@ -14,3 +14,5 @@
 	rb = rebase
 	s = status
 	undo = reset HEAD~1
+[core]
+  editor = nvim

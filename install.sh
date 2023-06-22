@@ -10,7 +10,13 @@ sudo apt update && sudo apt upgrade
 sudo apt install -y git man
 
 # Install basic utilities
-sudo apt install -y neovim tmux zip unzip gpg
+sudo apt install -y tmux zip unzip gpg xz-utils build-essential
 
 # Install languages
 sudo apt install -y python3
+
+# Install Nix
+sh <(curl -L https://nixos.org/nix/install) --daemon
+
+# Use Nix to install neovim and stuff needed for plugins
+nix-env -iA nixpkgs.neovim nixpkgs.gcc nixpkgs.nodejs
