@@ -1,0 +1,16 @@
+[user]
+	name = Jason Kuo
+	email = jasonkuo147@gmail.com
+[init]
+	defaultBranch = master
+[alias]
+	b = branch
+	co = checkout
+	cob = checkout -b
+	d = diff
+	f = fetch --all -p
+	l = log
+	last = log -1 HEAD --stat -p
+	rb = rebase
+	s = status
+	undo = reset HEAD~1
