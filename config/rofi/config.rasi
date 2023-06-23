@@ -1,0 +1,9 @@
+configuration {
+    modi: [drun];
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    drun-display-format: "{icon} {name}";
+    display-drun: "   Apps ";
+}
+
+@theme "catppuccin-frappe"
