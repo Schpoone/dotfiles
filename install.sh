@@ -20,3 +20,9 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # Use Nix to install neovim and stuff needed for plugins
 nix-env -iA nixpkgs.neovim nixpkgs.gcc nixpkgs.nodejs
+
+####################################
+# Install dependencies for content #
+####################################
+
+sudo apt install -y ffmpeg
