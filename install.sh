@@ -12,8 +12,11 @@ sudo apt install -y git man
 # Install basic utilities
 sudo apt install -y tmux zip unzip gpg xz-utils build-essential
 
-# Install languages
+# Install languages from apt
 sudo apt install -y python3
+
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Install Nix
 sh <(curl -L https://nixos.org/nix/install) --daemon
