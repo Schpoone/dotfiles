@@ -13,7 +13,7 @@ sudo apt install -y git man
 sudo apt install -y tmux zip unzip gpg xz-utils build-essential
 
 # Install languages from apt
-sudo apt install -y python3
+sudo apt install -y python3 python3-pip
 
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
