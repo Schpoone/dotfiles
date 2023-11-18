@@ -26,7 +26,7 @@ sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
 # Install Nix
-sh <(curl -L https://nixos.org/nix/install) --daemon
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 # Use Nix to install neovim and stuff needed for plugins
 nix-env -iA nixpkgs.neovim nixpkgs.gcc nixpkgs.nodejs
