@@ -1,7 +1,7 @@
 os:
-    editCommand: 'vim'
-    editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
-    openCommand: 'alacritty -e vim {{filename}}'
+    Edit: 'vim'
+    EditAtLine: '{{editor}} +{{line}} -- {{filename}}'
+    Open: 'alacritty -e vim {{filename}}'
 gui:
     theme:
         lightTheme: false
