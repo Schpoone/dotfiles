@@ -1,8 +1,10 @@
 #!/bin/bash
-
 ########################################################################
 # Install script to setup my dev environment from base Debian Bullseye #
+# Run this from this directory                                         #
 ########################################################################
+
+set -euo pipefail
 
 sudo apt update && sudo apt upgrade
 
@@ -10,7 +12,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install -y git man
 
 # Install basic utilities
-sudo apt install -y tmux zip unzip gpg xz-utils build-essential
+sudo apt install -y tmux zip unzip gpg xz-utils build-essential curl
 
 # Install languages from apt
 sudo apt install -y python3 python3-pip
@@ -25,11 +27,29 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
+# Copy other config files to correct places
+cp gitconfig ~/.gitconfig
+cp bashrc ~/.bashrc
+cp -r config/lazygit ~/.config/lazygit
+
 # Install Nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 # Use Nix to install neovim and stuff needed for plugins
+. ~/.nix-profile/etc/profile.d/nix.sh
 nix-env -iA nixpkgs.neovim nixpkgs.gcc nixpkgs.nodejs
+
+# Install NvChad and configure
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+cp -r config/nvim ~/.config/nvim/lua/custom
+
+# Install TPM for tmux config
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
+# Configure tmux
+cp config/tmux/tmux.conf ~/.config/tmux/tmux.conf
+ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
+bash ~/.config/tmux/plugins/tpm/bin/install_plugins
 
 ####################################
 # Install dependencies for content #
