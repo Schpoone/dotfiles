@@ -28,6 +28,7 @@ sudo install lazygit /usr/local/bin
 rm lazygit lazygit.tar.gz
 
 # Copy other config files to correct places
+# TODO: Use GNU stow to symlink these instead of copying them directly
 cp gitconfig ~/.gitconfig
 cp bashrc ~/.bashrc
 cp -r config/lazygit ~/.config/lazygit
@@ -55,4 +56,4 @@ bash ~/.config/tmux/plugins/tpm/bin/install_plugins
 # Install dependencies for content #
 ####################################
 
-sudo apt install -y ffmpeg
+sudo apt install -y ffmpeg yt-dlp expect
