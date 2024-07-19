@@ -51,6 +51,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 cp config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 bash ~/.config/tmux/plugins/tpm/bin/install_plugins
+mkdir -p ~/.tmux/resurrect
 
 ####################################
 # Install dependencies for content #
