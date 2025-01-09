@@ -12,13 +12,16 @@ sudo apt update && sudo apt upgrade
 sudo apt install -y git man
 
 # Install basic utilities
-sudo apt install -y tmux zip unzip gpg xz-utils build-essential curl
+sudo apt install -y tmux zip unzip gpg xz-utils build-essential curl ripgrep
 
 # Install languages from apt
-sudo apt install -y python3 python3-pip
+sudo apt install -y python3 python3-pip python3-venv
 
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Create the config directory
+mkdir -p ~/.config
 
 # Install lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -40,9 +43,8 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 . ~/.nix-profile/etc/profile.d/nix.sh
 nix-env -iA nixpkgs.neovim nixpkgs.gcc nixpkgs.nodejs
 
-# Install NvChad and configure
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-cp -r config/nvim ~/.config/nvim/lua/custom
+# Install NvChad v2.5
+cp -r config/nvim ~/.config/nvim
 
 # Install TPM for tmux config
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
