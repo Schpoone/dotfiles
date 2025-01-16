@@ -59,4 +59,5 @@ mkdir -p ~/.tmux/resurrect
 # Install dependencies for content #
 ####################################
 
-sudo apt install -y ffmpeg yt-dlp expect
+sudo apt install -y ffmpeg expect
+sudo pip3 install yt-dlp --break-system-packages
